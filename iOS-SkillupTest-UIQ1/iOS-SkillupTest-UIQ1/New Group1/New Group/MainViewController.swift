@@ -8,11 +8,19 @@
 
 import UIKit
 
+@objc
+protocol MainViewControllerDelegate {
+    @objc optional func toggleLeftPanel()
+    @objc optional func collapseSidePanels()
+}
+
 final class MainViewController: UIViewController {
     
     // MARK: - Properties
     private let dbDao = DataBaseDao()
     private let jobListProvider = JobListProvider()
+    
+    var delegate: MainViewControllerDelegate?
     // MARK: - IBOutlet
     @IBOutlet weak var jobListTableView: UITableView!
     
@@ -21,7 +29,11 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
     }
-
+    // MARK: - IBAction
+    @IBAction func menuButtonTapped(_ sender: Any) {
+        delegate?.toggleLeftPanel?()
+    }
+    
 }
 
 // MARK: - Private func
@@ -34,6 +46,16 @@ extension MainViewController {
     }
     
 }
+
+extension MainViewController: LeftPanelViewControllerDelegate {
+    func didSelectQuery() {
+        print("left panel")
+        delegate?.collapseSidePanels?()
+    }
+    
+    
+}
+
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension

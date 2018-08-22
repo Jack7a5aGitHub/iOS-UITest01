@@ -145,7 +145,11 @@
                         <viewLayoutGuide key="safeArea" id="j5e-ZQ-Lhz"/>
                     </view>
                     <navigationItem key="navigationItem" title="求人一覧" id="dgS-Zj-urw">
-                        <barButtonItem key="leftBarButtonItem" image="hamburger_menu" id="ivu-bH-ukU"/>
+                        <barButtonItem key="leftBarButtonItem" image="hamburger_menu" id="ivu-bH-ukU">
+                            <connections>
+                                <action selector="menuButtonTapped:" destination="hvW-UG-5JE" id="IXQ-WY-lie"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="jobListTableView" destination="qIh-eg-ayv" id="aVd-2U-V4F"/>
