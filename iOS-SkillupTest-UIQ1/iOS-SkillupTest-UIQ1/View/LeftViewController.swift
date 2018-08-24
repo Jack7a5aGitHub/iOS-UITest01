@@ -14,6 +14,9 @@ protocol LeftPanelViewControllerDelegate {
 
 class LeftViewController: UITableViewController {
     
+    // MARK: Properties
+    var delegate: LeftPanelViewControllerDelegate? 
+    
     // MARK: - IBOutlet
     @IBOutlet weak var queryTableView: UITableView!
     
