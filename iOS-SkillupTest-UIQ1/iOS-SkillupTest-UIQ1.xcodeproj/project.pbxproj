@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0A2144CC2132F60700A3BE39 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2144CB2132F60700A3BE39 /* ContainerViewController.swift */; };
+		0A2144D221336EB500A3BE39 /* ContainerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2144D121336EB500A3BE39 /* ContainerViewController.storyboard */; };
 		0A2F1771212978EA0073069B /* LeftViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A2F1770212978EA0073069B /* LeftViewController.swift */; };
 		0A2F1773212978FA0073069B /* LeftViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A2F1772212978FA0073069B /* LeftViewController.storyboard */; };
 		0A4171AB2131207C00D9881B /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4171AA2131207C00D9881B /* UIStoryboard.swift */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		0A2144CB2132F60700A3BE39 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		0A2144D121336EB500A3BE39 /* ContainerViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ContainerViewController.storyboard; sourceTree = "<group>"; };
 		0A2F1770212978EA0073069B /* LeftViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LeftViewController.swift; path = "iOS-SkillupTest-UIQ1/View/LeftViewController.swift"; sourceTree = SOURCE_ROOT; };
 		0A2F1772212978FA0073069B /* LeftViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LeftViewController.storyboard; path = "iOS-SkillupTest-UIQ1/View/LeftViewController.storyboard"; sourceTree = SOURCE_ROOT; };
 		0A4171AA2131207C00D9881B /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				0A2144CB2132F60700A3BE39 /* ContainerViewController.swift */,
+				0A2144D121336EB500A3BE39 /* ContainerViewController.storyboard */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 			files = (
 				0A4D946C2127A63800D2E9CB /* MainViewController.storyboard in Resources */,
 				0A4D944621279D0100D2E9CB /* LaunchScreen.storyboard in Resources */,
+				0A2144D221336EB500A3BE39 /* ContainerViewController.storyboard in Resources */,
 				0A2F1773212978FA0073069B /* LeftViewController.storyboard in Resources */,
 				0A4D944321279D0100D2E9CB /* Assets.xcassets in Resources */,
 			);
