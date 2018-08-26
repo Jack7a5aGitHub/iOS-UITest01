@@ -14,12 +14,18 @@ protocol MainViewControllerDelegate {
     @objc optional func collapseSidePanels()
 }
 
+enum SlideOutState {
+    case bothCollapsed
+    case leftPanelExpanded
+    case rightPlanelExpanded
+}
+
 final class MainViewController: UIViewController {
     
     // MARK: - Properties
     private let dbDao = DataBaseDao()
     private let jobListProvider = JobListProvider()
-    
+   
     var delegate: MainViewControllerDelegate?
     // MARK: - IBOutlet
     @IBOutlet weak var jobListTableView: UITableView!
@@ -28,6 +34,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        print("mainaian")
     }
     // MARK: - IBAction
     @IBAction func menuButtonTapped(_ sender: Any) {
@@ -38,13 +45,16 @@ final class MainViewController: UIViewController {
 
 // MARK: - Private func
 extension MainViewController {
+    
+  
     private func setupTableView() {
         jobListTableView.delegate = self
         jobListTableView.dataSource = jobListProvider
-        jobListProvider.fetchJobInfoFromDB(fetchedJobInfo: dbDao.fetchData())
+        jobListTableView.allowsSelection = false 
+        //jobListProvider.fetchJobInfoFromDB(fetchedJobInfo: dbDao.fetchData())
         jobListTableView.reloadData()
     }
-    
+  
 }
 
 extension MainViewController: LeftPanelViewControllerDelegate {

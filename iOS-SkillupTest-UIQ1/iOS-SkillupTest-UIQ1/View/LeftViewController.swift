@@ -12,11 +12,12 @@ protocol LeftPanelViewControllerDelegate {
     func didSelectQuery()
 }
 
-class LeftViewController: UITableViewController {
+class LeftViewController: UIViewController {
     
     // MARK: Properties
+    private var centerViewController: MainViewController!
     var delegate: LeftPanelViewControllerDelegate? 
-    
+    let centerPanelExpandedOffset: CGFloat = 60
     // MARK: - IBOutlet
     @IBOutlet weak var queryTableView: UITableView!
     
@@ -24,18 +25,20 @@ class LeftViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+        print("Left is came out ")
     }
 
 }
 
 // MARK: - Private func
 extension LeftViewController {
+ 
     private func setupTableView() {
-        queryTableView.tableFooterView = UIView()
-        queryTableView.delegate = self
+     
     }
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print("Tapped")
     }
 }
+
