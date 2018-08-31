@@ -14,6 +14,8 @@ struct JobInfo {
     var location = ""
     var salary = ""
     var details = ""
+    var startDate = ""
+    var endDate = ""
 }
 
 final class JobListProvider: NSObject {
@@ -39,6 +41,8 @@ extension JobListProvider: UITableViewDataSource {
         cell.imageUrl = jobInfo[indexPath.row].imageUrl
         cell.salary = jobInfo[indexPath.row].salary
         cell.details = jobInfo[indexPath.row].details
+        cell.startDate = jobInfo[indexPath.row].startDate
+        cell.endDate = jobInfo[indexPath.row].endDate
         return cell
     }
 }

@@ -9,14 +9,15 @@
 import UIKit
 
 protocol LeftPanelViewControllerDelegate {
-    func didSelectQuery()
+    func queueFromTheLatest()
+    func queueFromTheEnd()
 }
 
-class LeftViewController: UIViewController {
+class LeftViewController: UITableViewController {
     
     // MARK: Properties
     private var centerViewController: MainViewController!
-    var delegate: LeftPanelViewControllerDelegate? 
+    var leftDelegate: LeftPanelViewControllerDelegate?
     let centerPanelExpandedOffset: CGFloat = 60
     // MARK: - IBOutlet
     @IBOutlet weak var queryTableView: UITableView!
@@ -25,20 +26,25 @@ class LeftViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        print("Left is came out ")
     }
-
+    
 }
 
 // MARK: - Private func
 extension LeftViewController {
- 
+    
     private func setupTableView() {
-     
+        queryTableView.delegate = self
+        queryTableView.tableFooterView = UIView()
     }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        print("Tapped")
+        print("Tapped", indexPath.row)
+        if indexPath.row == 0 {
+           leftDelegate?.queueFromTheLatest()
+        } else {
+           leftDelegate?.queueFromTheEnd()
+        }
     }
 }
 

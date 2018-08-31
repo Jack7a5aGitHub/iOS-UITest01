@@ -34,7 +34,6 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        print("mainaian")
     }
     // MARK: - IBAction
     @IBAction func menuButtonTapped(_ sender: Any) {
@@ -51,15 +50,21 @@ extension MainViewController {
         jobListTableView.delegate = self
         jobListTableView.dataSource = jobListProvider
         jobListTableView.allowsSelection = false 
-        //jobListProvider.fetchJobInfoFromDB(fetchedJobInfo: dbDao.fetchData())
+        jobListProvider.fetchJobInfoFromDB(fetchedJobInfo: dbDao.fetchData(isReversed: false))
         jobListTableView.reloadData()
     }
   
 }
 
 extension MainViewController: LeftPanelViewControllerDelegate {
-    func didSelectQuery() {
-        print("left panel")
+    func queueFromTheLatest() {
+        jobListProvider.fetchJobInfoFromDB(fetchedJobInfo: dbDao.fetchData(isReversed: true))
+        jobListTableView.reloadData()
+        delegate?.collapseSidePanels?()
+    }
+    func queueFromTheEnd() {
+        jobListProvider.fetchJobInfoFromDB(fetchedJobInfo: dbDao.fetchData(isReversed: true))
+        jobListTableView.reloadData()
         delegate?.collapseSidePanels?()
     }
     

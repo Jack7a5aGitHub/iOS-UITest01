@@ -26,7 +26,7 @@ final class ContainerViewController: UIViewController {
     }
     var leftViewController: LeftViewController?
     
-    let centerPanelExpandedOffset: CGFloat = 60
+    let centerPanelExpandedOffset: CGFloat = 140
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,7 +81,7 @@ extension ContainerViewController: MainViewControllerDelegate {
     
     func addChildSidePanelController(_ sidePanelController: LeftViewController) {
         
-        sidePanelController.delegate = centerViewController
+        sidePanelController.leftDelegate = centerViewController
         view.insertSubview(sidePanelController.view, at: 0)
         
         addChildViewController(sidePanelController)
@@ -112,9 +112,12 @@ extension ContainerViewController: MainViewControllerDelegate {
     
     func showShadowForCenterViewController(_ shouldShowShadow: Bool) {
         if shouldShowShadow {
-            centerNavigationController.view.layer.shadowOpacity = 0.8
+            centerViewController.jobListTableView.backgroundColor = .black
+            centerViewController.view.alpha = 0.6
+            
         } else {
-            centerNavigationController.view.layer.shadowOpacity = 0.0
+            centerViewController.jobListTableView.backgroundColor = .clear
+            centerViewController.view.alpha = 1
         }
     }
 }

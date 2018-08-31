@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class JobListCell: UITableViewCell {
     
@@ -18,6 +19,8 @@ final class JobListCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var salaryImageView: UIImageView!
     @IBOutlet weak var salaryLabel: UILabel!
+    var startDate = ""
+    var endDate = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -40,12 +43,8 @@ final class JobListCell: UITableViewCell {
                 let url = URL(string: image) else {
                     return
             }
-            do {
-                let data = try Data(contentsOf: url)
-                jobImageView?.image = UIImage(data: data)
-            } catch {
-                print(error)
-            }
+                jobImageView?.kf.setImage(with: url)
+            
         }
     }
     var locationName: String? {

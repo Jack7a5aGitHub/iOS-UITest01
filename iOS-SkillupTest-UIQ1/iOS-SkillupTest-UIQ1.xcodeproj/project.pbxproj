@@ -24,6 +24,7 @@
 		0A4D94762127BA0D00D2E9CB /* JobListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D94752127BA0D00D2E9CB /* JobListCell.swift */; };
 		0A4D94782127BA3500D2E9CB /* JobListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D94772127BA3500D2E9CB /* JobListProvider.swift */; };
 		0A4D947C2127BB8200D2E9CB /* NSObject+ClassName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D947B2127BB8200D2E9CB /* NSObject+ClassName.swift */; };
+		0A9716962139870B001679B0 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9716952139870B001679B0 /* Kingfisher.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		0A4D94752127BA0D00D2E9CB /* JobListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JobListCell.swift; path = "iOS-SkillupTest-UIQ1/View/JobListCell.swift"; sourceTree = SOURCE_ROOT; };
 		0A4D94772127BA3500D2E9CB /* JobListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListProvider.swift; sourceTree = "<group>"; };
 		0A4D947B2127BB8200D2E9CB /* NSObject+ClassName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "NSObject+ClassName.swift"; path = "iOS-SkillupTest-UIQ1/View/NSObject+ClassName.swift"; sourceTree = SOURCE_ROOT; };
+		0A9716952139870B001679B0 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9716962139870B001679B0 /* Kingfisher.framework in Frameworks */,
 				0A4D946F2127B05000D2E9CB /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -198,6 +201,7 @@
 		0A4D946D2127B05000D2E9CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A9716952139870B001679B0 /* Kingfisher.framework */,
 				0A4D946E2127B05000D2E9CB /* SQLite.framework */,
 			);
 			name = Frameworks;
@@ -375,6 +379,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/SQLite.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Kingfisher.framework",
 			);
 			outputPaths = (
 			);
